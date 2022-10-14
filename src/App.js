@@ -1,10 +1,19 @@
 import './App.css';
-import Layout from "./components/Layout/Layout"
+import React from 'react'
+import Routers from './routes/Routers';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+
 
 function App() {
-  return (
-    <Layout />
-  );
+    return (
+        <>
+            <Header />
+            <Routers />
+            <Footer />
+        </>
+
+    );
 }
 
 export default App;
