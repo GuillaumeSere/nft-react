@@ -17,10 +17,10 @@ const HeroSection = () => {
                                 corporis praesentium magnam rerum odio quisquam!</p>
                             <div className="hero__btns d-flex align-items-center gap-4">
                                 <button className='explore__btn d-flex align-items-center gap-2'>
-                                    <i className="ri-rocket-line"></i><Link to='/market'>Explore</Link>
+                                    <i className="ri-rocket-line"></i><Link to='/nft-react/market'>Explore</Link>
                                 </button>
                                 <button className='explore__btn d-flex align-items-center gap-2'>
-                                    <i className="ri-ball-pen-line"></i><Link to='/create'>Explore</Link>
+                                    <i className="ri-ball-pen-line"></i><Link to='/nft-react/create'>Explore</Link>
                                 </button>
                             </div>
                         </div>
