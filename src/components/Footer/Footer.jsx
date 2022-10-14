@@ -6,19 +6,19 @@ import './footer.css'
 const MY__ACCOUNT = [
     {
         display: 'Author Profile',
-        url: '/seller-profile'
+        url: '/nft-react/seller-profile'
     },
     {
         display: 'Create Item',
-        url: '/create'
+        url: '/nft-react/create'
     },
     {
         display: 'Collection',
-        url: '/market'
+        url: '/nft-react/market'
     },
     {
         display: 'Edit Profile',
-        url: '/edit-profile'
+        url: '/nft-react/edit-profile'
     },
 ]
 
@@ -56,7 +56,7 @@ const COMPANY = [
     },
     {
         display: 'Contact Us',
-        url: '/contact'
+        url: '/nft-react/contact'
     },
 ]
 

@@ -63,7 +63,7 @@ const NftDetails = () => {
                                 <p className='my-4'>{singleNft.desc}</p>
                                 <button className='singleNft-btn d-flex align-items-center gap-2 w-100'>
                                     <i className="ri-shopping-bag-line"></i>
-                                    <Link to='/wallet'>Place a Bid</Link>
+                                    <Link to='/nft-react/wallet'>Place a Bid</Link>
                                 </button>
                             </div>
                         </Col>
