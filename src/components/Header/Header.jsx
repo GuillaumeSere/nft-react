@@ -6,19 +6,19 @@ import { NavLink, Link } from 'react-router-dom'
 const NAV__LINKS = [
     {
         display: 'Home',
-        url: '/home'
+        url: '/nft-react/home'
     },
     {
         display: 'Market',
-        url: '/market'
+        url: '/nft-react/market'
     },
     {
         display: 'Create',
-        url: '/create'
+        url: '/nft-react/create'
     },
     {
         display: 'Contact',
-        url: '/contact'
+        url: '/nft-react/contact'
     },
 ]
 
@@ -78,7 +78,7 @@ const Header = () => {
                             <span>
                                 <i className="ri-wallet-line"></i>
                             </span>
-                            <Link to="/wallet"> Connect Wallet</Link>
+                            <Link to="/nft-react/wallet"> Connect Wallet</Link>
                         </button>
 
                         <span className="mobile__menu">

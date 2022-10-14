@@ -13,7 +13,7 @@ const LiveAction = () => {
                     <Col lg='12' className='mb-5'>
                         <div className="live__action__top d-flex align-items-center justify-content-between">
                             <h3>Live Action</h3>
-                            <span><Link to='/market'>Explore more</Link></span>
+                            <span><Link to='/nft-react/market'>Explore more</Link></span>
                         </div>
                     </Col>
 

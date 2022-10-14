@@ -14,15 +14,15 @@ import NftDetails from "../pages/NftDetails"
 const Routers = () => {
   return (
         <Routes>
-            <Route path="/" element={<Navigate to="/home" />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/market" element={<Market />} />
-            <Route path="/create" element={<Create />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/edit-profile" element={<EditProfile />} />
-            <Route path="/seller-profile" element={<SellerProfile />} />
-            <Route path="/wallet" element={<Wallet />} />
-            <Route path="/market/:id" element={<NftDetails />} />
+            <Route path="/nft-react" element={<Navigate to="/home" />} />
+            <Route path="/nft-react/home" element={<Home />} />
+            <Route path="/nft-react/market" element={<Market />} />
+            <Route path="/nft-react/create" element={<Create />} />
+            <Route path="/nft-react/contact" element={<Contact />} />
+            <Route path="/nft-react/edit-profile" element={<EditProfile />} />
+            <Route path="/nft-react/seller-profile" element={<SellerProfile />} />
+            <Route path="/nft-react/wallet" element={<Wallet />} />
+            <Route path="/nft-react/market/:id" element={<NftDetails />} />
         </Routes>
   )
 }

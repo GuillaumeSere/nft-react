@@ -16,7 +16,7 @@ const NftCard = (props) => {
             </div>
 
             <div className="nft__content">
-                <h5 className='nft__title'><Link to={`/market/${id}`}>{title}</Link></h5>
+                <h5 className='nft__title'><Link to={`/nft-react/market/${id}`}>{title}</Link></h5>
 
                 <div className="creator__info-wrapper d-flex gap-3">
                     <div className="creator__img">
