@@ -5,7 +5,7 @@ import Modal from '../Modal/Modal'
 
 const NftCard = (props) => {
 
-    const {title, id, currentBid, creatorImg, nftImg, imgUrl, creator} = props.item
+    const {title, id, currentBid, creatorImg, imgUrl, creator} = props.item
 
     const [showModal, setShowModal] = useState(false)
 
