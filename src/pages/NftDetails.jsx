@@ -1,11 +1,10 @@
 import React from 'react'
 import CommonSection from '../components/ui/Common-section/CommonSection'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Container, Row, Col } from 'reactstrap'
 import { NFT__DATA } from '../assets/data/data'
 import LiveAction from '../components/ui/Live-action/LiveAction'
 import '../styles/nft-details.css'
-import { Link } from 'react-router-dom'
 
 
 const NftDetails = () => {
@@ -14,14 +13,34 @@ const NftDetails = () => {
 
     const singleNft = NFT__DATA.find(item => item.id === id)
 
+    if (!singleNft) {
+        return (
+            <>
+                <CommonSection title="NFT introuvable" subtitle="Cette pièce n’existe pas ou n’est plus disponible dans la collection de démonstration." />
+                <section>
+                    <Container className="text-center">
+                        <Link className="primary__btn" to="/market">
+                            <i className="ri-arrow-left-line"></i>
+                            Retour marketplace
+                        </Link>
+                    </Container>
+                </section>
+            </>
+        )
+    }
+
+    const detailDesc = singleNft.desc?.toLowerCase().startsWith('lorem')
+        ? 'Une pièce numérique issue de la collection de démonstration MintLab. Cette page sert à valider le parcours de consultation, l’identité créateur et l’appel à l’action avant de brancher les données on-chain.'
+        : singleNft.desc
+
     return (
         <>
-            <CommonSection title={singleNft.title} />
+            <CommonSection title={singleNft.title} subtitle="Détail de la pièce, créateur, prix et action d’achat." />
             <section>
                 <Container>
                     <Row>
                         <Col lg='6' md='6' sm='6'>
-                            <img src={singleNft.imgUrl} alt="" className='w-100 single__nft__img' />
+                            <img src={singleNft.imgUrl} alt={singleNft.title} className='w-100 single__nft__img' />
                         </Col>
 
                         <Col lg='6' md='6' sm='6'>
@@ -55,15 +74,15 @@ const NftDetails = () => {
                                     </div>
 
                                     <div className="creator__detail">
-                                        <p>Created By</p>
+                                        <p>Créateur</p>
                                         <h6>{singleNft.creator}</h6>
                                     </div>
                                 </div>
 
-                                <p className='my-4'>{singleNft.desc}</p>
+                                <p className='my-4'>{detailDesc}</p>
                                 <button className='singleNft-btn d-flex align-items-center gap-2 w-100'>
                                     <i className="ri-shopping-bag-line"></i>
-                                    <Link to='/nft-react/wallet'>Place a Bid</Link>
+                                    <Link to='/wallet'>Placer une offre</Link>
                                 </button>
                             </div>
                         </Col>

@@ -5,24 +5,24 @@ import { Link } from 'react-router-dom'
 
 const STEP__DATA = [
     {
-        title: 'Setup your wallet',
-        desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.Sunt debitis laudantium libero maiores obcaecati sint!',
-        icon: 'ri-wallet-line'
+        title: 'Importer le visuel',
+        desc: 'Ajoutez votre image, vidéo ou fichier source et contrôlez immédiatement le rendu de la carte.',
+        icon: 'ri-upload-cloud-2-line'
     },
     {
-        title: 'Create your collection',
-        desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.Sunt debitis laudantium libero maiores obcaecati sint!',
-        icon: 'ri-layout-masonry-line'
+        title: 'Décrire l’œuvre',
+        desc: 'Renseignez titre, description, collection, catégorie et royalties avant publication.',
+        icon: 'ri-quill-pen-line'
     },
     {
-        title: 'Add your NFTs',
-        desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.Sunt debitis laudantium libero maiores obcaecati sint!',
-        icon: 'ri-image-line'
+        title: 'Préparer la vente',
+        desc: 'Choisissez prix fixe ou enchère, dates, mise minimale et blockchain cible.',
+        icon: 'ri-auction-line'
     },
     {
-        title: 'List then for sale',
-        desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.Sunt debitis laudantium libero maiores obcaecati sint!',
-        icon: 'ri-list-check'
+        title: 'Brancher le mint',
+        desc: 'Le front est prêt pour connecter wallet, smart contract et stockage décentralisé.',
+        icon: 'ri-link-m'
     }
 ]
 
@@ -32,7 +32,17 @@ const StepSection = () => {
             <Container>
                 <Row>
                     <Col lg='12' className='mb-4'>
-                        <h3 className="step__title">Create and Sell Your NFTs</h3>
+                        <div className="section__heading">
+                            <div>
+                                <span className="app__eyebrow">Workflow</span>
+                                <h3 className="step__title">Créer sans friction</h3>
+                                <p>Une interface pensée comme un atelier: elle guide la préparation du NFT avant l’intégration blockchain.</p>
+                            </div>
+                            <Link className="secondary__btn" to="/create">
+                                <i className="ri-add-circle-line"></i>
+                                Lancer un draft
+                            </Link>
+                        </div>
                     </Col>
                     {STEP__DATA.map((item, index) => 
                     <Col lg='3' md='4' sm='6' key={index} className='mb-4'>
@@ -42,7 +52,7 @@ const StepSection = () => {
                             </span>
                             <div className="step__item__content">
                                 <h5>
-                                    <Link to='/nft-react/wallet'>{item.title}</Link>
+                                    <Link to='/create'>{item.title}</Link>
                                 </h5>
                                 <p className='mb-0'>{item.desc}</p>
                             </div>

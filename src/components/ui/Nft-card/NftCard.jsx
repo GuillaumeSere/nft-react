@@ -16,35 +16,35 @@ const NftCard = (props) => {
             </div>
 
             <div className="nft__content">
-                <h5 className='nft__title'><Link to={`/nft-react/market/${id}`}>{title}</Link></h5>
+                <h5 className='nft__title'><Link to={`/market/${id}`}>{title}</Link></h5>
 
-                <div className="creator__info-wrapper d-flex gap-3">
+                <div className="creator__info-wrapper">
                     <div className="creator__img">
-                        <img src={creatorImg} alt="" className='w-100' />
+                        <img src={creatorImg} alt={creator} className='w-100' />
                     </div>
-                    <div className="creator__info w-100 d-flex align-items-center justify-content-between">
+                    <div className="creator__info">
                         <div>
-                            <h6>Created By</h6>
+                            <h6>Créateur</h6>
                             <p>{creator}</p>
                         </div>
 
                         <div>
-                            <h6>Current Bid</h6>
+                            <h6>Prix actuel</h6>
                             <p>{currentBid} ETH</p>
                         </div>
                     </div>
                 </div>
 
-                <div className='mt-3 d-flex align-items-center justify-content-between'>
-                    <button className="bid__btn d-flex align-items-center gap-1" onClick={() => setShowModal(true)}>
+                <div className='nft__actions'>
+                    <button type="button" className="bid__btn" onClick={() => setShowModal(true)}>
                         <i className="ri-shopping-bag-line"></i>
-                        Place Bid
+                        Miser
                     </button>
 
-                    {showModal && <Modal setShowModal={setShowModal} />}
+                    {showModal && <Modal setShowModal={setShowModal} currentBid={currentBid} title={title} />}
 
                     <span className='history__link'>
-                        <Link to='#'>View History</Link>
+                        <Link to='#'>Historique</Link>
                     </span>
                 </div>
 

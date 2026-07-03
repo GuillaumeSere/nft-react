@@ -1,38 +1,43 @@
 import React from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import { Container } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import './hero-section.css'
 import heroImg from '../../assets/images/hero.jpg'
 
 const HeroSection = () => {
     return (
-        <section className="hero__section">
+        <section className="hero__section" style={{ '--hero-image': `url(${heroImg})` }}>
             <Container>
-                <Row>
-                    <Col lg='6' md='6'>
-                        <div className="hero__content">
-                            <h2>Discover rare digital art and collect <span>sell extraordinary</span> NFTs</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Vitae molestias, natus veniam harum dignissimos
-                                corporis praesentium magnam rerum odio quisquam!</p>
-                            <div className="hero__btns d-flex align-items-center gap-4">
-                                <button className='explore__btn d-flex align-items-center gap-2'>
-                                    <i className="ri-rocket-line"></i><Link to='/nft-react/market'>Explore</Link>
-                                </button>
-                                <button className='explore__btn d-flex align-items-center gap-2'>
-                                    <i className="ri-ball-pen-line"></i><Link to='/nft-react/create'>Explore</Link>
-                                </button>
-                            </div>
-                        </div>
-                    </Col>
+                <div className="hero__content">
+                    <span className="app__eyebrow">Atelier NFT pour créateurs</span>
+                    <h1>MintLab</h1>
+                    <p>Préparez votre collection, testez le rendu de vos métadonnées et organisez la vente avant de brancher le smart contract.</p>
+                    <div className="hero__btns">
+                        <Link className='primary__btn' to='/create'>
+                            <i className="ri-magic-line"></i>
+                            Créer un NFT
+                        </Link>
+                        <Link className='ghost__btn' to='/market'>
+                            <i className="ri-compass-3-line"></i>
+                            Explorer
+                        </Link>
+                    </div>
+                </div>
 
-                    <Col lg='6' md='6'>
-                        <div className="hero__img">
-                            <img src={heroImg} alt=""  className='w-100'/>
-                        </div>
-                    </Col>
-
-                </Row>
+                <div className="hero__metrics" aria-label="Indicateurs MintLab">
+                    <div>
+                        <span>3 étapes</span>
+                        <p>Upload, métadonnées, preview</p>
+                    </div>
+                    <div>
+                        <span>Live preview</span>
+                        <p>Aperçu mis à jour en direct</p>
+                    </div>
+                    <div>
+                        <span>Mint à venir</span>
+                        <p>UX prête pour le wallet</p>
+                    </div>
+                </div>
             </Container>
         </section>
     )

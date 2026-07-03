@@ -1,57 +1,76 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import CommonSection from '../components/ui/Common-section/CommonSection'
 import { Container, Row, Col } from 'reactstrap'
+import '../styles/contact.css'
 
 const Contact = () => {
-
     const nameRef = useRef('')
     const emailRef = useRef('')
     const subjectRef = useRef('')
     const messageRef = useRef('')
+    const [sent, setSent] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setSent(true)
     }
 
     return (
         <>
-            <CommonSection title='Contact' />
+            <CommonSection title='Contact' subtitle='Une question sur le studio, la marketplace ou la future intégration mint ?' />
             <section>
                 <Container>
-                    <Row>
-                        <Col lg='6' md='6' className='m-auto text-center'>
-                            <h2>Drop & Message</h2>
-                            <p>Lorem ipsum dolor sit,
-                                amet consectetur adipisicing elit.
-                                Suscipit rerum maiores quos repellat
-                                necessitatibus incidunt voluptatem illo nulla, et soluta?</p>
-                            <div className="contact mt-4">
-                                <form onSubmit={handleSubmit}>
-                                    <div className="form__input">
-                                        <input type="text" placeholder='Enter your name' ref={nameRef} />
-                                    </div>
-                                    <div className="form__input">
-                                        <input type="email" placeholder='Enter your email'ref={emailRef} />
-                                    </div>
-                                    <div className="form__input">
-                                        <input type="text" placeholder='Enter subject' ref={subjectRef} />
-                                    </div>
-                                    <div className="form__input">
-                                        <textarea rows="7" placeholder='Write message' ref={messageRef}></textarea>
-                                    </div>
+                    <Row className="align-items-start">
+                        <Col lg='5' className='mb-4'>
+                            <div className="contact__intro">
+                                <span className="app__eyebrow">Support créateur</span>
+                                <h3>Parlons de votre collection</h3>
+                                <p>La messagerie reste front-only pour le moment, mais l’écran est prêt pour brancher une API de contact ou un CRM.</p>
 
-                                    <button className='send__btn'
-                                        style={{
-                                            border: 'none',
-                                            padding: '7px 25px',
-                                            BorderRadius: '5px',
-                                            marginTop: '1rem'
-                                        }}
-                                    >
-                                        Send a Message
-                                    </button>
-                                </form>
+                                <div className="contact__line">
+                                    <i className="ri-mail-line"></i>
+                                    <span>studio@mintlab.local</span>
+                                </div>
+                                <div className="contact__line">
+                                    <i className="ri-discord-line"></i>
+                                    <span>Communauté MintLab</span>
+                                </div>
                             </div>
+                        </Col>
+
+                        <Col lg='7'>
+                            <form className="contact__form" onSubmit={handleSubmit}>
+                                <div className="contact__grid">
+                                    <div className="form__input">
+                                        <label htmlFor="contactName">Nom</label>
+                                        <input id="contactName" type="text" placeholder='Votre nom' ref={nameRef} />
+                                    </div>
+                                    <div className="form__input">
+                                        <label htmlFor="contactEmail">Email</label>
+                                        <input id="contactEmail" type="email" placeholder='votre@email.com' ref={emailRef} />
+                                    </div>
+                                </div>
+                                <div className="form__input">
+                                    <label htmlFor="contactSubject">Sujet</label>
+                                    <input id="contactSubject" type="text" placeholder='Création NFT, wallet, marketplace...' ref={subjectRef} />
+                                </div>
+                                <div className="form__input">
+                                    <label htmlFor="contactMessage">Message</label>
+                                    <textarea id="contactMessage" rows="7" placeholder='Décrivez votre besoin' ref={messageRef}></textarea>
+                                </div>
+
+                                {sent && (
+                                    <div className="contact__notice" role="status">
+                                        <i className="ri-check-line"></i>
+                                        <p>Message préparé côté interface. Il faudra connecter un service d’envoi pour l’expédition réelle.</p>
+                                    </div>
+                                )}
+
+                                <button className='primary__btn' type="submit">
+                                    <i className="ri-send-plane-line"></i>
+                                    Envoyer
+                                </button>
+                            </form>
                         </Col>
                     </Row>
                 </Container>

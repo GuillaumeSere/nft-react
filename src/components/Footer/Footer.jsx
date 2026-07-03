@@ -5,49 +5,49 @@ import './footer.css'
 
 const MY__ACCOUNT = [
     {
-        display: 'Author Profile',
-        url: '/nft-react/seller-profile'
+        display: 'Profil créateur',
+        url: '/seller-profile'
     },
     {
-        display: 'Create Item',
-        url: '/nft-react/create'
+        display: 'Créer un NFT',
+        url: '/create'
     },
     {
         display: 'Collection',
-        url: '/nft-react/market'
+        url: '/market'
     },
     {
-        display: 'Edit Profile',
-        url: '/nft-react/edit-profile'
+        display: 'Modifier profil',
+        url: '/edit-profile'
     },
 ]
 
 const RESOURCES = [
     {
-        display: 'Help Center',
+        display: 'Guide du mint',
         url: '#'
     },
     {
-        display: 'Partner',
+        display: 'Frais et royalties',
         url: '#'
     },
     {
-        display: 'Community',
+        display: 'Communauté',
         url: '#'
     },
     {
-        display: 'Activity',
+        display: 'Statut plateforme',
         url: '#'
     },
 ]
 
 const COMPANY = [
     {
-        display: 'About',
+        display: 'À propos',
         url: '#'
     },
     {
-        display: 'Career',
+        display: 'Studio',
         url: '#'
     },
     {
@@ -55,8 +55,8 @@ const COMPANY = [
         url: '#'
     },
     {
-        display: 'Contact Us',
-        url: '/nft-react/contact'
+        display: 'Contact',
+        url: '/contact'
     },
 ]
 
@@ -66,21 +66,19 @@ const Footer = () => {
             <Container>
                 <Row>
                     <Col lg='3' md='6' sm='6'>
-                        <div className="logo">
-                            <h2 className='d-flex gap-2 align-items-center'>
-                                <span>
-                                    <i className="ri-fire-fill"></i>
+                        <div className="footer__logo">
+                            <Link to="/home" className="footer__brand">
+                                <span className="logo__mark">
+                                    <i className="ri-shape-line"></i>
                                 </span>
-                                NFTs
-                            </h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Aperiam, temporibus soluta. Ea, sit! Voluptate dicta
-                                expedita, incidunt rem soluta quasi!</p>
+                                <span>MintLab</span>
+                            </Link>
+                            <p>Un atelier simple pour préparer, prévisualiser et bientôt publier vos NFTs sans perdre le fil créatif.</p>
                         </div>
                     </Col>
 
                     <Col lg='2' md='3' sm='6' className='mb-4'>
-                        <h5>My Account</h5>
+                        <h5>Compte</h5>
                         <ListGroup className='list__group'>
                             {MY__ACCOUNT.map((item, index) => (
                                 <ListGroupItem key={index} className='list__item'>
@@ -91,7 +89,7 @@ const Footer = () => {
                     </Col>
 
                     <Col lg='2' md='3' sm='6' className='mb-4'>
-                        <h5>Resources</h5>
+                        <h5>Ressources</h5>
                         <ListGroup className='list__group'>
                             {RESOURCES.map((item, index) => (
                                 <ListGroupItem key={index} className='list__item'>
@@ -102,7 +100,7 @@ const Footer = () => {
                     </Col>
 
                     <Col lg='2' md='3' sm='6' className='mb-4'>
-                        <h5>Company</h5>
+                        <h5>Projet</h5>
                         <ListGroup className='list__group'>
                             {COMPANY.map((item, index) => (
                                 <ListGroupItem key={index} className='list__item'>
@@ -114,7 +112,13 @@ const Footer = () => {
 
                     <Col lg='3' md='6' sm='6' className='mb-4'>
                         <h5>Newsletter</h5>
-                        <input type="text" className='newsletter' placeholder='Email' />
+                        <p className="footer__note">Recevez les nouveautés sur le mint, les ventes et les wallets pris en charge.</p>
+                        <div className="newsletter__wrap">
+                            <input type="email" className='newsletter' placeholder='votre@email.com' />
+                            <button aria-label="S'inscrire à la newsletter">
+                                <i className="ri-arrow-right-line"></i>
+                            </button>
+                        </div>
                         <div className="social__links d-flex gap-3 align-items-center">
                             <span>
                                 <Link to='#'>
@@ -145,7 +149,7 @@ const Footer = () => {
                     </Col>
                     <Col lg='12' className='mt-4 text-center'>
                         <p className='copyright'>
-                            Copyrights 2022, Developed by <span>Guillaume Sere</span> with React
+                            © 2026 MintLab. Prototype React de marketplace NFT.
                         </p>
                     </Col>
                 </Row>

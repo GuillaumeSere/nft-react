@@ -9,8 +9,12 @@ const SellerSection = () => {
             <Container>
                 <Row>
                     <Col lg='12' className='mb-5'>
-                        <div className="seller__section-title">
-                            <h3>Top seller</h3>
+                        <div className="section__heading">
+                            <div className="seller__section-title">
+                                <span className="app__eyebrow">Communauté</span>
+                                <h3>Créateurs actifs</h3>
+                                <p>Une base de profils prête à évoluer vers de vrais comptes wallet et collections vérifiées.</p>
+                            </div>
                         </div>
                     </Col>
 

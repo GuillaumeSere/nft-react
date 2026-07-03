@@ -1,22 +1,91 @@
-.all__category__filter select,
-.all__items__filter select,
-.filter__right select {
-    padding: 7px 25px;
-    font-size: .9rem;
-    color: #fff;
-    cursor: pointer;
+.market__section{
+    background: var(--bg);
+}
+
+.market__product__filter{
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+.market__search{
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    padding: 0 .85rem;
+    background: #10151c;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+}
+
+.market__search i{
+    color: var(--accent);
+}
+
+.market__search input{
+    width: 100%;
     border: none;
     outline: none;
-    background: #343444;
-    border-radius: .3rem;
+    color: var(--text);
+    background: transparent;
+    font-size: .94rem;
+}
+
+.filter__group{
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.filter__group select{
+    min-height: 46px;
+    padding: 0 2.2rem 0 .85rem;
+    font-size: .9rem;
+    color: var(--text);
+    cursor: pointer;
+    border: 1px solid var(--line);
+    outline: none;
+    background: #10151c;
+    border-radius: 6px;
+}
+
+.market__empty{
+    min-height: 260px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+.market__empty i{
+    color: var(--warm);
+    font-size: 2.5rem;
+}
+
+.market__empty h4{
+    margin: .75rem 0 .2rem;
+}
+
+.market__empty p{
+    margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
+    .market__product__filter{
+        grid-template-columns: 1fr;
+    }
 
-    .all__category__filter select,
-    .all__items__filter select,
-    .filter__right select {
-        padding: 6px 20px;
-        font-size: .7rem;
+    .filter__group{
+        align-items: stretch;
+        flex-direction: column;
     }
 }

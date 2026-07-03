@@ -11,7 +11,13 @@ const Trending = () => {
             <Container>
                 <Row>
                     <Col lg='12' className='mb-5'>
-                        <h3 className="trending__title">Trending</h3>
+                        <div className="section__heading">
+                            <div>
+                                <span className="app__eyebrow">Inspiration</span>
+                                <h3 className="trending__title">Collections qui montent</h3>
+                                <p>Des visuels pour tester la marketplace et inspirer les créateurs avant le mint.</p>
+                            </div>
+                        </div>
                     </Col>
                     {NFT__DATA.slice(0, 8).map((item) => (
                     <Col lg='3' md='4' sm='6' key={item.id} className='mb-4'>

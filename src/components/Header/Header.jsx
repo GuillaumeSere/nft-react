@@ -1,71 +1,61 @@
-import React,{ useRef, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './header.css'
 import { Container } from 'reactstrap'
 import { NavLink, Link } from 'react-router-dom'
 
 const NAV__LINKS = [
     {
-        display: 'Home',
-        url: '/nft-react/home'
+        display: 'Accueil',
+        url: '/home'
     },
     {
-        display: 'Market',
-        url: '/nft-react/market'
+        display: 'Marketplace',
+        url: '/market'
     },
     {
-        display: 'Create',
-        url: '/nft-react/create'
+        display: 'Créer',
+        url: '/create'
     },
     {
         display: 'Contact',
-        url: '/nft-react/contact'
+        url: '/contact'
     },
 ]
 
 const Header = () => {
 
-    const headerRef = useRef(null)
-
-    const menuRef = useRef(null)
+    const [isScrolled, setIsScrolled] = useState(false)
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     useEffect(() => {
-        window.addEventListener('scroll', () => {
-            if (
-                document.body.scrollTop > 80 ||
-                 document.documentElement.scrollTop > 80
-                 ){
-                headerRef.current.classList.add('header__shrink');
-            }else {
-                headerRef.current.classList.remove('header__shrink');
-            }
-        });
-        return () => {
-            window.removeEventListener("scroll", () => {
-                headerRef.current.classList.remove('header__shrink');
-            });
-        }
-    }, []);
+        const handleScroll = () => setIsScrolled(window.scrollY > 48)
+        handleScroll()
+        window.addEventListener('scroll', handleScroll)
 
-    const toggleMenu = () => menuRef.current.classList.toggle('active__menu')
+        return () => {
+            window.removeEventListener("scroll", handleScroll)
+        }
+    }, [])
+
+    const closeMenu = () => setIsMenuOpen(false)
+    const toggleMenu = () => setIsMenuOpen((current) => !current)
 
     return (
-        <header className="header" ref={headerRef}>
+        <header className={`header ${isScrolled ? 'header__shrink' : ''}`}>
             <Container>
                 <div className="navigation">
-                    <div className="logo">
-                        <h2 className='d-flex gap-2 align-items-center'>
-                            <span>
-                                <i className="ri-fire-fill"></i>
-                            </span>
-                            NFTs
-                        </h2>
-                    </div>
+                    <Link to="/home" className="logo" onClick={closeMenu}>
+                        <span className="logo__mark">
+                            <i className="ri-shape-line"></i>
+                        </span>
+                        <span className="logo__text">MintLab</span>
+                    </Link>
 
-                    <div className="nav__menu" ref={menuRef} onClick={toggleMenu}>
+                    <div className={`nav__menu ${isMenuOpen ? 'active__menu' : ''}`} onClick={closeMenu}>
                         <ul className="nav__list">
                             {NAV__LINKS.map((item, index) => (
                                 <li className="nav__item" key={index}>
-                                    <NavLink to={item.url} className={navClass => navClass.isActive ? 'active' : ''}>
+                                    <NavLink to={item.url} className={navClass => navClass.isActive ? 'active' : ''} onClick={closeMenu}>
                                         {item.display}
                                     </NavLink>
                                 </li>
@@ -73,17 +63,15 @@ const Header = () => {
                         </ul>
                     </div>
 
-                    <div className="nav__right d-flex align-items-center gap-5">
-                        <button className="btn d-flex gap-2 align-items-center">
-                            <span>
-                                <i className="ri-wallet-line"></i>
-                            </span>
-                            <Link to="/nft-react/wallet"> Connect Wallet</Link>
-                        </button>
+                    <div className="nav__right">
+                        <Link className="wallet__link" to="/wallet" onClick={closeMenu}>
+                            <i className="ri-wallet-3-line"></i>
+                            Wallet
+                        </Link>
 
-                        <span className="mobile__menu">
-                            <i className="ri-menu-line" onClick={toggleMenu}></i>
-                        </span>
+                        <button className="mobile__menu" onClick={toggleMenu} aria-label="Ouvrir le menu">
+                            <i className={isMenuOpen ? "ri-close-line" : "ri-menu-line"}></i>
+                        </button>
                     </div>
                 </div>
             </Container>

@@ -1,45 +1,48 @@
 import React from 'react'
 import './modal.css'
 
-const Modal = ({ setShowModal }) => {
+const Modal = ({ setShowModal, currentBid = 5.89, title = 'NFT' }) => {
+    const serviceFee = 0.02
+    const totalBid = Number(currentBid + serviceFee).toFixed(2)
+
     return (
         <div className='modal__wrapper' onClick={() => setShowModal(false)}>
-            <div className="single__modal">
-                <span className='close__modal'>
+            <div className="single__modal" onClick={(e) => e.stopPropagation()}>
+                <button className='close__modal' onClick={() => setShowModal(false)} aria-label="Fermer">
                     <i className="ri-close-line"></i>
-                </span>
+                </button>
 
-                <h6 className='text-center text-light'>Place a Bid</h6>
+                <h6 className='text-center text-light'>Miser sur {title}</h6>
                 <p className='text-center text-light'>
-                    You must bid at least <span className='money'>5.89 ETH</span>
+                    Votre offre minimale est de <span className='money'>{currentBid} ETH</span>
                 </p>
 
                 <div className="input__item mb-4">
-                    <input type="number" placeholder='00 : 00 ETH' />
+                    <input type="number" placeholder={`${currentBid} ETH`} />
                 </div>
 
                 <div className="input__item mb-3">
-                    <h6>Enter Quantity, 7 available</h6>
-                    <input type="number" placeholder='00 : 00 ETH' />
+                    <h6>Quantité</h6>
+                    <input type="number" placeholder='1' min="1" />
                 </div>
 
                 <div className='d-flex align-items-center justify-content-between'>
-                    <p>You must bid at least</p>
-                    <span className='money'>5.89 ETH</span>
+                    <p>Offre minimale</p>
+                    <span className='money'>{currentBid} ETH</span>
                 </div>
 
                 <div className='d-flex align-items-center justify-content-between'>
-                    <p>Service Fee</p>
-                    <span className='money'>0.89 ETH</span>
+                    <p>Frais service</p>
+                    <span className='money'>{serviceFee} ETH</span>
                 </div>
 
                 <div className='d-flex align-items-center justify-content-between'>
-                    <p>Total Bid Amount</p>
-                    <span className='money'>5.89 ETH</span>
+                    <p>Total estimé</p>
+                    <span className='money'>{totalBid} ETH</span>
                 </div>
 
                 <button className="place__bid-btn">
-                    Place a Bid
+                    Valider l'offre
                 </button>
 
             </div>

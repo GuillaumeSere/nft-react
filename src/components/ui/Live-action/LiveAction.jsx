@@ -11,9 +11,16 @@ const LiveAction = () => {
             <Container>
                 <Row>
                     <Col lg='12' className='mb-5'>
-                        <div className="live__action__top d-flex align-items-center justify-content-between">
-                            <h3>Live Action</h3>
-                            <span><Link to='/nft-react/market'>Explore more</Link></span>
+                        <div className="section__heading">
+                            <div>
+                                <span className="app__eyebrow">Marketplace</span>
+                                <h3>Drops en cours</h3>
+                                <p>Un aperçu des collections à surveiller pendant que le studio de création prend forme.</p>
+                            </div>
+                            <Link className="ghost__btn" to='/market'>
+                                <i className="ri-arrow-right-line"></i>
+                                Tout voir
+                            </Link>
                         </div>
                     </Col>
 

@@ -1,66 +1,111 @@
-.footer h5{
-    font-size: 1.1rem;
-    color: #fff;
-}
-
 .footer{
     padding-bottom: 30px;
-    background: #000;
+    background: #0a0d12;
+    border-top: 1px solid var(--line);
+}
+
+.footer h5{
+    font-size: .95rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.footer__brand{
+    display: inline-flex;
+    align-items: center;
+    gap: .7rem;
+    color: var(--text);
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.footer__brand:hover{
+    color: var(--text);
+}
+
+.footer p{
+    font-size: .92rem;
+    line-height: 1.65;
 }
 
 .list__item{
     background: transparent !important;
     padding-left: 0 !important;
     border: none !important;
+    padding-top: .25rem !important;
+    padding-bottom: .35rem !important;
 }
 
 .list__item a{
-    text-decoration: none;
-    color: #fff;
-    opacity: 85%;
+    color: var(--muted);
     font-size: .9rem;
+    transition: color .2s ease;
 }
 
 .list__item a:hover{
-    color: #E250E5;
-    opacity: 95%;
+    color: var(--accent);
+}
+
+.footer__note{
+    margin-bottom: .75rem;
+}
+
+.newsletter__wrap{
+    width: 100%;
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--surface);
+    overflow: hidden;
+    margin-bottom: 1rem;
 }
 
 .newsletter{
-    width: 100%;
-    border-radius: 50px;
-    color: #fff;
-    padding: 8px 25px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    flex: 1;
+    min-width: 0;
+    color: var(--text);
+    padding: 0 .9rem;
     border: none;
     outline: none;
-    font-size: .8rem;
-    background: #343444;
+    font-size: .9rem;
+    background: transparent;
+}
+
+.newsletter__wrap button{
+    width: 46px;
+    height: 46px;
+    border: none;
+    color: #071313;
+    background: var(--accent);
 }
 
 ::placeholder{
-    color: #fff;
+    color: rgba(247, 243, 235, .55);
 }
 
 .social__links span a{
-    text-decoration: none;
-    color: #fff;
-    opacity: 85%;
-    font-size: 1.5rem;
-    font-weight: 400;
-    transition: .3s;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-size: 1.05rem;
+    transition: color .2s ease, border-color .2s ease, background .2s ease;
 }
 
 .social__links span a:hover{
-    color: #e250e5;
-}
-
-span{
-    color: #e250e5;
+    color: var(--text);
+    border-color: rgba(79, 209, 197, .5);
+    background: rgba(79, 209, 197, .08);
 }
 
 .copyright{
     font-size: .8rem;
+    margin-bottom: 0;
 }
-

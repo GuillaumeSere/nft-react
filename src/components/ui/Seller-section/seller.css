@@ -1,20 +1,43 @@
 .seller__section-title h3{
-    color: #fff;
+    color: var(--text);
+}
+
+.single__seller-card{
+    min-height: 92px;
+    padding: .9rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
 }
 
 .seller__img{
-    width: 80px;
-    height: 80px;
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 180, 84, .5);
+}
+
+.seller__img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .seller__content h6{
-    font-size: 1rem;
-    color: #fff;
+    font-size: .9rem;
+    color: var(--text);
+    margin-bottom: .15rem;
+}
+
+.seller__content h6:last-child{
+    color: var(--accent);
+    font-size: .8rem;
 }
 
 @media (max-width: 992px){
-
     .seller__content h6{
-        font-size: .8rem;
+        font-size: .82rem;
     }
 }
